@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+	Circuitos del campeonato de MotoGP
+{% endblock %}
+	{% block content%}
+		<ul class="lista_items_principal">
+			{% for circuito in object_list %}
+				{% if circuito.carrera_por_disputar %}
+					<li>
+						<a href="{% url "circuitos:detalle" circuito.slug %}">
+							{{ circuito.nombre }} | 
+						</a>
+					</li>
+				{% else %}
+					<li>
+						<a href="{% url "circuitos:detalle" circuito.slug %}">
+                                                        {{ circuito.nombre }} | <span class="evento_pasado">GRAN PREMIO DISPUTADO</span>
+                                                </a>
+					</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	{% endblock %}
+	
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+	Pilotos que compiten en el campeonato de MotoGP
+{% endblock %}
+	{% block content%}
+		<ul class="lista_items_principal">
+			{% for piloto in object_list %}
+				<li>
+					<a href="{% url "pilotos:detalle" piloto.slug %}">
+						{{ piloto.nombre }} | 
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	{% endblock %}
+	
+</body>
+</html>

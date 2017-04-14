@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+	{{ circuito.nombre }}
+{% endblock %}
+{% block content%}
+	<div class="detail_info">
+		<h1>{{ circuito.nombre }}</h1>
+		{{ circuito.descripcion|safe }}
+		<img src="{{ circuito.imagen_trazado.url }}" alt="">
+	</div>
+		
+{% endblock %}
+</body>
+</html>

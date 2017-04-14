@@ -1,0 +1,132 @@
+body{
+	margin: 0;
+	background-image: url("../img/fondo.png");
+	padding-bottom: 50px;
+}
+html, body{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+footer{
+	display: block;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	height: 7%;
+	position: fixed;
+}
+.detail_info{
+	background-color: #ffffff;
+	text-align: center;
+	max-width: 800px;
+	margin: 1em auto;
+	padding: 3em;
+	border-radius: 10px;
+}
+.detail_info h1{
+	padding-bottom: 1em;
+}
+.detail_info img{
+	width: 100%;
+	padding-top: 3em;
+}
+.evento_pasado{
+	color: #ff0000;
+}
+.full_height{
+	height: 100%;
+}
+.lista_items_principal{
+	list-style-type: none;
+	text-align: center;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0;
+	
+}
+.lista_items_principal li{
+	margin: 0.5em;
+	margin-right: 0;
+	margin-left: 0;
+}
+.lista_items_principal li a{
+	color: #ffffff;
+	background-color: #b7b7b7;
+	text-decoration: none;
+	display: block;
+	padding: 1em;
+	
+}
+.lista_items_principal li a:hover{
+	color: #000000;
+	background-color: #ffffff;
+}
+.lista_noticias {
+	display: inline-block !important;
+	width: 80%;
+}
+.logo_personalizado, .boton_personalizado{
+	color: #ffffff !important;
+}
+.margin_bottom_for_footer{
+	margin-bottom: 7%;
+}
+.mostrar{
+	display: block;
+}
+.ocultar{
+	display: none;
+}
+#pagination_noticias{
+	display: table !important;
+	margin: 0 auto !important;
+	max-width: 800px !important;
+}
+#pagination_noticias li a {
+	margin: 0.5em 0;
+}
+#pagination_noticias li span {
+	margin: 0.5em 0;
+}
+.perfil_piloto{
+	max-width: 200px;
+}
+footer{
+	background-color: #000000;
+	color: #ffffff;
+	padding: 1em;
+}
+.site-menu-container ul{
+	list-style-type: none;
+	width: 80%;
+	display: inline-block;
+}
+.site-menu-container ul li{
+	display: inline-block;
+	padding: 0 1em;
+}
+.site-menu li a{
+	text-decoration: none;
+	color: #ffffff;
+	padding: 1em;
+}
+.site-menu li a:hover{
+	background-color: #ffffff;
+	color: #000000;
+
+}
+.titular_pagina_listado{
+	color: #ffffff;
+}
+@media only screen and (max-width: 720px){
+	footer{
+		height: 80px;
+	}
+	.lista_noticias{
+		width: 100%;
+	}
+	.margin_bottom_for_footer{
+		margin-bottom: 15%;
+	}
+}

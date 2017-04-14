@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+	{{ equipo.nombre }}
+{% endblock %}
+{% block content%}
+	<div class="detail_info">
+		<h1>{{ equipo.nombre }}</h1>
+		<p>{{ equipo.imagen_equipo }}</p>
+		<p>{{ equipo.fuente  }}</p>
+		{% if equipo.pilotos %}
+			<p>Pilotos del equipo:</p>
+			<ul>
+				<li><a href="http://motogpcheckpoint.com/pilotos/{{ piloto.slug }}">{{ equipo.pilotos }}</a></li>
+			</ul>
+		{% endif %}
+		{{ equipo.historia|safe }}
+	</div>
+		
+{% endblock %}
+</body>
+</html>

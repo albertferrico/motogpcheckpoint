@@ -1,0 +1,334 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+        MotoGPCheckpoint, la web para estar al día de lo que ocurre en MotoGPlo que ocurre en MotoGP
+{% endblock %}
+        {% block content%}
+		<div class="lista_items_principal">
+			<h1 class="titular_pagina_listado">Cuenta atrás para el próximo Gran Premio:</h1>
+			<p id="Austin" class="ocultar" style="color: #ffffff; font-size: 5em"></p>
+			<p id="Jerez" class="ocultar" style="color: #ffffff; font-size: 5em"></p>
+			<p id="LeMans" class="ocultar" style="color: #ffffff; font-size: 5em"></p>
+			<p id="Mugello" class="ocultar" style="color: #ffffff; font-size: 5em"></p>
+			<p id="Montmelo" class="ocultar" style="color: #ffffff; font-size: 5em"></p>
+			<p id="Assen" class="ocultar" style="color: #ffffff; font-size: 5em"></p>
+			<p id="Sachsenring" class="ocultar" style="color: #ffffff; font-size: 5em"></p>
+			<p id="Brno" class="ocultar" style="color: #ffffff; font-size: 5em"></p>
+			<p id="Spielberg" class="ocultar" style="color: #ffffff; font-size: 5em"></p>
+			<p id="Silverstone" class="ocultar" style="color: #ffffff; font-size: 5em"></p>
+			<p id="MarcoSimoncelli" class="ocultar" style="color: #ffffff; font-size: 5em"></p>
+			<p id="Motorland" class="ocultar" style="color: #ffffff; font-size: 5em"></p>
+			<p id="Motegi" class="ocultar" style="color: #ffffff; font-size: 5em"></p>
+			<p id="PhillipIsland" class="ocultar" style="color: #ffffff; font-size: 5em"></p>
+			<p id="Sepang" class="ocultar" style="color: #ffffff; font-size: 5em"></p>
+			<p id="Valencia" class="ocultar" style="color: #ffffff; font-size: 5em"></p>
+		</div>
+			
+		<script>
+                        // Set the date we're counting down to
+                        var countDownDateAustin = new Date("Apr 23, 2017 15:40:00").getTime();
+                        var countDownDateJerez = new Date("May 07, 2017 13:00:00").getTime();
+                        var countDownDateLeMans = new Date("May 21, 2017 13:00:00").getTime();
+                        var countDownDateMugello = new Date("Jun 04, 2017 13:00:00").getTime();
+                        var countDownDateMontmelo = new Date("Jun 11, 2017 13:00:00").getTime();
+                        var countDownDateAssen = new Date("Jun 25, 2017 12:00:00").getTime();
+                        var countDownDateSachsenring = new Date("Jul 02, 2017 13:00:00").getTime();
+                        var countDownDateBrno = new Date("Aug 06, 2017 13:00:00").getTime();
+                        var countDownDateSpielberg = new Date("Aug 13, 2017 13:00:00").getTime();
+                        var countDownDateSilverstone = new Date("Aug 27, 2017 15:30:00").getTime();
+                        var countDownDateMarcoSimoncelli = new Date("Sep 10, 2017 13:00:00").getTime();
+                        var countDownDateMotorland = new Date("Sep 24, 2017 13:00:00").getTime();
+                        var countDownDateMotegi = new Date("Oct 15, 2017 06:00:00").getTime();
+                        var countDownDatePhillipIsland = new Date("Oct 22, 2017 06:00:00").getTime();
+                        var countDownDateSepang = new Date("Oct 29, 2017 07:00:00").getTime();
+                        var countDownDateValencia = new Date("Nov 12, 2017 13:00:00").getTime();
+
+
+                        // Update the count down every 1 second
+                        var Austin = setInterval(function() {
+
+				var now = new Date().getTime();
+				
+				// Find the distance between now an the count down date
+                        	var distanceToAustin = countDownDateAustin - now;
+                        	var distanceToJerez = countDownDateJerez - now;
+                        	var distanceToLeMans = countDownDateLeMans - now;
+                        	var distanceToMugello = countDownDateMugello - now;
+                        	var distanceToMontmelo = countDownDateMontmelo - now;
+                        	var distanceToAssen = countDownDateAssen - now;
+                        	var distanceToSachsenring = countDownDateSachsenring - now;
+                        	var distanceToBrno = countDownDateBrno - now;
+                        	var distanceToSpielberg = countDownDateSpielberg - now;
+                        	var distanceToSilverstone = countDownDateSilverstone - now;
+                        	var distanceToMarcoSimoncelli = countDownDateMarcoSimoncelli - now;
+                        	var distanceToMotorland = countDownDateMotorland - now;
+                        	var distanceToMotegi = countDownDateMotegi - now;
+                        	var distanceToPhillipIsland = countDownDatePhillipIsland - now;
+                        	var distanceToSepang = countDownDateSepang - now;
+                        	var distanceToValencia = countDownDateValencia - now;                                
+                                
+
+                                // Time calculations for days, hours, minutes and seconds
+                                var daysAustin = Math.floor(distanceToAustin / (1000 * 60 * 60 * 24));
+                                var hoursAustin = Math.floor((distanceToAustin % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                var minutesAustin = Math.floor((distanceToAustin % (1000 * 60 * 60)) / (1000 * 60));
+                                var secondsAustin = Math.floor((distanceToAustin % (1000 * 60)) / 1000);
+
+                                 // Output the result in an element with id="demo"
+                                document.getElementById("Austin").innerHTML = daysAustin + "d " + hoursAustin + "h " + minutesAustin + "m " + secondsAustin + "s ";
+
+                                 // If the count down is over, write some text
+                                if (distanceToAustin > 0) {
+                                        document.getElementById("Austin").className="mostrar";
+                                }
+
+
+                                
+                                
+
+                                // Time calculations for days, hours, minutes and seconds
+                                var daysJerez = Math.floor(distanceToJerez / (1000 * 60 * 60 * 24));
+                                var hoursJerez = Math.floor((distanceToJerez % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                var minutesJerez = Math.floor((distanceToJerez % (1000 * 60 * 60)) / (1000 * 60));
+                                var secondsJerez = Math.floor((distanceToJerez % (1000 * 60)) / 1000);
+
+                                 // Output the result in an element with id="demo"
+                                document.getElementById("Jerez").innerHTML = daysJerez + "d " + hoursJerez + "h " + minutesJerez + "m " + secondsJerez + "s ";
+
+                                 // If the count down is over, write some text
+                                if (distanceToAustin < 0 && distanceToJerez > 0) {
+                                        document.getElementById("Jerez").className="mostrar";
+                                }
+
+                                
+                                
+
+                                // Time calculations for days, hours, minutes and seconds
+                                var daysLeMans = Math.floor(distanceToLeMans / (1000 * 60 * 60 * 24));
+                                var hoursLeMans = Math.floor((distanceToLeMans % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                var minutesLeMans = Math.floor((distanceToLeMans % (1000 * 60 * 60)) / (1000 * 60));
+                                var secondsLeMans = Math.floor((distanceToLeMans % (1000 * 60)) / 1000);
+
+                                 // Output the result in an element with id="demo"
+                                document.getElementById("LeMans").innerHTML = daysLeMans + "d " + hoursLeMans + "h " + minutesLeMans + "m " + secondsLeMans + "s ";
+
+                                 // If the count down is over, write some text
+                                if (distanceToJerez < 0 && distanceToLeMans > 0) {
+                                        document.getElementById("LeMans").className="mostrar";
+                                }
+
+                                
+                                
+
+                                // Time calculations for days, hours, minutes and seconds
+                                var daysMugello = Math.floor(distanceToMugello / (1000 * 60 * 60 * 24));
+                                var hoursMugello = Math.floor((distanceToMugello % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                var minutesMugello = Math.floor((distanceToMugello % (1000 * 60 * 60)) / (1000 * 60));
+                                var secondsMugello = Math.floor((distanceToMugello % (1000 * 60)) / 1000);
+
+                                 // Output the result in an element with id="demo"
+                                document.getElementById("Mugello").innerHTML = daysMugello + "d " + hoursMugello + "h " + minutesMugello + "m " + secondsMugello + "s ";
+
+                                 // If the count down is over, write some text
+                                if (distanceToLeMans < 0 && distanceToMugello > 0) {
+                                        document.getElementById("Mugello").className="mostrar";
+                                }
+
+                                
+                                
+
+                                // Time calculations for days, hours, minutes and seconds
+                                var daysMontmelo = Math.floor(distanceToMontmelo / (1000 * 60 * 60 * 24));
+                                var hoursMontmelo = Math.floor((distanceToMontmelo % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                var minutesMontmelo = Math.floor((distanceToMontmelo % (1000 * 60 * 60)) / (1000 * 60));
+                                var secondsMontmelo = Math.floor((distanceToMontmelo % (1000 * 60)) / 1000);
+
+                                 // Output the result in an element with id="demo"
+                                document.getElementById("Montmelo").innerHTML = daysMontmelo + "d " + hoursMontmelo + "h " + minutesMontmelo + "m " + secondsMontmelo + "s ";
+
+                                 // If the count down is over, write some text
+                                if (distanceToMugello < 0 && distanceToMontmelo > 0) {
+                                        document.getElementById("Montmelo").className="mostrar";
+                                }
+
+                                
+                                
+
+                                // Time calculations for days, hours, minutes and seconds
+                                var daysAssen = Math.floor(distanceToAssen / (1000 * 60 * 60 * 24));
+                                var hoursAssen = Math.floor((distanceToAssen % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                var minutesAssen = Math.floor((distanceToAssen % (1000 * 60 * 60)) / (1000 * 60));
+                                var secondsAssen = Math.floor((distanceToAssen % (1000 * 60)) / 1000);
+
+                                 // Output the result in an element with id="demo"
+                                document.getElementById("Assen").innerHTML = daysAssen + "d " + hoursAssen + "h " + minutesAssen + "m " + secondsAssen + "s ";
+
+                                 // If the count down is over, write some text
+                                if (distanceToMontmelo < 0 && distanceToAssen > 0) {
+                                        document.getElementById("Assen").className="mostrar";
+                                }
+
+
+                                // Time calculations for days, hours, minutes and seconds
+                                var daysSachsenring = Math.floor(distanceToSachsenring / (1000 * 60 * 60 * 24));
+                                var hoursSachsenring = Math.floor((distanceToSachsenring % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                var minutesSachsenring = Math.floor((distanceToSachsenring % (1000 * 60 * 60)) / (1000 * 60));
+                                var secondsSachsenring = Math.floor((distanceToSachsenring % (1000 * 60)) / 1000);
+
+                                 // Output the result in an element with id="demo"
+                                document.getElementById("Sachsenring").innerHTML = daysSachsenring + "d " + hoursSachsenring + "h " + minutesSachsenring + "m " + secondsSachsenring + "s ";
+
+                                 // If the count down is over, write some text
+                                if (distanceToAssen < 0 && distanceToSachsenring > 0) {
+                                        document.getElementById("Sachsenring").className="mostrar";
+                                }
+
+                                
+                                
+
+                                // Time calculations for days, hours, minutes and seconds
+                                var daysBrno = Math.floor(distanceToBrno / (1000 * 60 * 60 * 24));
+                                var hoursBrno = Math.floor((distanceToBrno % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                var minutesBrno = Math.floor((distanceToBrno % (1000 * 60 * 60)) / (1000 * 60));
+                                var secondsBrno = Math.floor((distanceToBrno % (1000 * 60)) / 1000);
+
+                                 // Output the result in an element with id="demo"
+                                document.getElementById("Brno").innerHTML = daysBrno + "d " + hoursBrno + "h " + minutesBrno + "m " + secondsBrno + "s ";
+
+                                 // If the count down is over, write some text
+                                if (distanceToSachsenring < 0 && distanceToBrno > 0) {
+                                        document.getElementById("Brno").className="mostrar";
+                                }
+
+
+                                // Time calculations for days, hours, minutes and seconds
+                                var daysSpielberg = Math.floor(distanceToSpielberg / (1000 * 60 * 60 * 24));
+                                var hoursSpielberg = Math.floor((distanceToSpielberg % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                var minutesSpielberg = Math.floor((distanceToSpielberg % (1000 * 60 * 60)) / (1000 * 60));
+                                var secondsSpielberg = Math.floor((distanceToSpielberg % (1000 * 60)) / 1000);
+
+                                 // Output the result in an element with id="demo"
+                                document.getElementById("Spielberg").innerHTML = daysSpielberg + "d " + hoursSpielberg + "h " + minutesSpielberg + "m " + secondsSpielberg + "s ";
+
+                                 // If the count down is over, write some text
+                                if (distanceToBrno < 0 && distanceToSpielberg > 0) {
+                                        document.getElementById("Spielberg").className="mostrar";
+                                }
+
+
+                                
+                                
+
+                                // Time calculations for days, hours, minutes and seconds
+                                var daysSilverstone = Math.floor(distanceToSilverstone / (1000 * 60 * 60 * 24));
+                                var hoursSilverstone = Math.floor((distanceToSilverstone % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                var minutesSilverstone = Math.floor((distanceToSilverstone % (1000 * 60 * 60)) / (1000 * 60));
+                                var secondsSilverstone = Math.floor((distanceToSilverstone % (1000 * 60)) / 1000);
+
+                                 // Output the result in an element with id="demo"
+                                document.getElementById("Silverstone").innerHTML = daysSilverstone + "d " + hoursSilverstone + "h " + minutesSilverstone + "m " + secondsSilverstone + "s ";
+
+                                 // If the count down is over, write some text
+                                if (distanceToSpielberg < 0 && distanceToSilverstone > 0) {
+                                        document.getElementById("Silverstone").className="mostrar";
+                                }
+
+
+                                // Time calculations for days, hours, minutes and seconds
+                                var daysMarcoSimoncelli = Math.floor(distanceToMarcoSimoncelli / (1000 * 60 * 60 * 24));
+                                var hoursMarcoSimoncelli = Math.floor((distanceToMarcoSimoncelli % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                var minutesMarcoSimoncelli = Math.floor((distanceToMarcoSimoncelli % (1000 * 60 * 60)) / (1000 * 60));
+                                var secondsMarcoSimoncelli = Math.floor((distanceToMarcoSimoncelli % (1000 * 60)) / 1000);
+
+                                 // Output the result in an element with id="demo"
+                                document.getElementById("MarcoSimoncelli").innerHTML = daysMarcoSimoncelli + "d " + hoursMarcoSimoncelli + "h " + minutesMarcoSimoncelli + "m " + secondsMarcoSimoncelli + "s ";
+
+                                 // If the count down is over, write some text
+                                if (distanceToSilverstone < 0 && distanceToMarcoSimoncelli > 0) {
+                                        document.getElementById("MarcoSimoncelli").className="mostrar";
+                                }
+				
+				var daysMotorland = Math.floor(distanceToMotorland / (1000 * 60 * 60 * 24));
+                                var hoursMotorland = Math.floor((distanceToMotorland % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                var minutesMotorland = Math.floor((distanceToMotorland % (1000 * 60 * 60)) / (1000 * 60));
+                                var secondsMotorland = Math.floor((distanceToMotorland % (1000 * 60)) / 1000);
+
+                                 // Output the result in an element with id="demo"
+                                document.getElementById("Motorland").innerHTML = daysMotorland + "d " + hoursMotorland + "h " + minutesMotorland + "m " + secondsMotorland + "s ";
+
+                                 // If the count down is over, write some text
+                                if (distanceToMarcoSimoncelli < 0 && distanceToMotorland > 0) {
+                                        document.getElementById("Motorland").className="mostrar";
+                                }
+
+                                
+                                
+
+                                // Time calculations for days, hours, minutes and seconds
+                                var daysMotegi = Math.floor(distanceToMotegi / (1000 * 60 * 60 * 24));
+                                var hoursMotegi = Math.floor((distanceToMotegi % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                var minutesMotegi = Math.floor((distanceToMotegi % (1000 * 60 * 60)) / (1000 * 60));
+                                var secondsMotegi = Math.floor((distanceToMotegi % (1000 * 60)) / 1000);
+
+                                 // Output the result in an element with id="demo"
+                                document.getElementById("Motegi").innerHTML = daysMotegi + "d " + hoursMotegi + "h " + minutesMotegi + "m " + secondsMotegi + "s ";
+
+                                 // If the count down is over, write some text
+                                if (distanceToMotorland < 0 && distanceToMotegi > 0) {
+                                        document.getElementById("Motegi").className="mostrar";
+                                }
+
+                                
+                                
+
+                                // Time calculations for days, hours, minutes and seconds
+                                var daysPhillipIsland = Math.floor(distanceToPhillipIsland / (1000 * 60 * 60 * 24));
+                                var hoursPhillipIsland = Math.floor((distanceToPhillipIsland % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                var minutesPhillipIsland = Math.floor((distanceToPhillipIsland % (1000 * 60 * 60)) / (1000 * 60));
+                                var secondsPhillipIsland = Math.floor((distanceToPhillipIsland % (1000 * 60)) / 1000);
+
+                                 // Output the result in an element with id="demo"
+                                document.getElementById("PhillipIsland").innerHTML = daysPhillipIsland + "d " + hoursPhillipIsland + "h " + minutesPhillipIsland + "m " + secondsPhillipIsland + "s ";
+
+                                 // If the count down is over, write some text
+                                if (distanceToMotegi < 0 && distanceToPhillipIsland > 0) {
+                                        document.getElementById("PhillipIsland").className="mostrar";
+                                }
+
+                                
+                                
+
+                                // Time calculations for days, hours, minutes and seconds
+                                var daysSepang = Math.floor(distanceToSepang / (1000 * 60 * 60 * 24));
+                                var hoursSepang = Math.floor((distanceToSepang % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                var minutesSepang = Math.floor((distanceToSepang % (1000 * 60 * 60)) / (1000 * 60));
+                                var secondsSepang = Math.floor((distanceToSepang % (1000 * 60)) / 1000);
+
+                                 // Output the result in an element with id="demo"
+                                document.getElementById("Sepang").innerHTML = daysSepang + "d " + hoursSepang + "h " + minutesSepang + "m " + secondsSepang + "s ";
+
+                                 // If the count down is over, write some text
+                                if (distanceToPhillipIsland < 0 && distanceToSepang > 0) {
+                                        document.getElementById("Sepang").className="mostrar";
+                                }
+
+                                
+                                
+
+                                // Time calculations for days, hours, minutes and seconds
+                                var daysValencia = Math.floor(distanceToValencia / (1000 * 60 * 60 * 24));
+                                var hoursValencia = Math.floor((distanceToValencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                var minutesValencia = Math.floor((distanceToValencia % (1000 * 60 * 60)) / (1000 * 60));
+                                var secondsValencia = Math.floor((distanceToValencia % (1000 * 60)) / 1000);
+
+                                 // Output the result in an element with id="demo"
+                                document.getElementById("Valencia").innerHTML = daysValencia + "d " + hoursValencia + "h " + minutesValencia + "m " + secondsValencia + "s ";
+
+                                 // If the count down is over, write some text
+                                if (distanceToSepang < 0 && distanceToValencia > 0) {
+                                        document.getElementById("Valencia").className="mostrar";
+                                }
+			}, 1000);
+                                
+                </script>
+	{% endblock %}
