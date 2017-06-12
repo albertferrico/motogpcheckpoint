@@ -13,6 +13,8 @@ class Circuito(models.Model):
 	
 	def carrera_por_disputar(self):
 		return self.fecha_evento > date.today()	
+	def carrera_en_curso(self):
+		return self.fecha_evento == date.today()
 
 	def __unicode__(self):
 		return self.nombre

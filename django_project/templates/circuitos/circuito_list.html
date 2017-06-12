@@ -12,6 +12,12 @@
 							{{ circuito.nombre }} | 
 						</a>
 					</li>
+				{% elif circuito.carrera_en_curso %}
+					<li>
+						<a href="{% url "circuitos:detalle" circuito.slug %}">
+						{{ circuito.nombre }} | <span class="evento_en_curso">GRAN PREMIO EN CURSO</span>
+						</a>
+					</li>
 				{% else %}
 					<li>
 						<a href="{% url "circuitos:detalle" circuito.slug %}">

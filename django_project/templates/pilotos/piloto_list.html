@@ -8,7 +8,7 @@
 			{% for piloto in object_list %}
 				<li>
 					<a href="{% url "pilotos:detalle" piloto.slug %}">
-						{{ piloto.nombre }} | 
+						{{ piloto.nombre }} | {{ piloto.numero_dorsal }}
 					</a>
 				</li>
 			{% endfor %}

@@ -8,6 +8,7 @@ from bs4 import *
 from noticias.models import Noticia
 
 
+
 class Command(BaseCommand):
 	# ··························································#
 	def handle(self, *args, **options):
@@ -18,6 +19,10 @@ class Command(BaseCommand):
 			srcCodeMotorsport = requests.get("http://es.motorsport.com/category/moto-gp/news/")
 			srcCodeMCN = requests.get("http://www.motorcyclenews.com/sport/motogp/")
 			srcCodeMSMagazine = requests.get("http://www.motorsportmagazine.com/motogp")
+			srcCodeMotociclismoEs = requests.get("http://www.motociclismo.es/mundial-motogp")
+			srcCodeMotoblogIt = requests.get("http://www.motoblog.it/categoria/motogp-motomondiale")
+			srcCodeRepubblicaIt = requests.get("http://www.repubblica.it/sport/moto-gp/")
+			srcCodeMoto1pro = requests.get("http://www.moto1pro.com/tags/motogp")
 			
 			plainText = srcCode.text
 			plainTextMarca = srcCodeMarca.text
@@ -25,6 +30,10 @@ class Command(BaseCommand):
 			plainTextMotorsport = srcCodeMotorsport.text
 			plainTextMCN = srcCodeMCN.text
 			plainTextMSMagazine = srcCodeMSMagazine.text
+			plainTextMotociclismoEs = srcCodeMotociclismoEs.text
+			plainTextMotoblogIt = srcCodeMotoblogIt.text
+			plainTextRepubblicaIt = srcCodeRepubblicaIt.text
+			plainTextMoto1pro = srcCodeMoto1pro.text
 
 			soup = BeautifulSoup(plainText)
 			soupMarca = BeautifulSoup(plainTextMarca)
@@ -32,6 +41,10 @@ class Command(BaseCommand):
 			soupMotorsport = BeautifulSoup(plainTextMotorsport)
 			soupMCN = BeautifulSoup(plainTextMCN)
 			soupMSMagazine = BeautifulSoup(plainTextMSMagazine)
+			soupMotociclismoEs = BeautifulSoup(plainTextMotociclismoEs)
+			soupMotoblogIt = BeautifulSoup(plainTextMotoblogIt)
+			soupRepubblicaIt = BeautifulSoup(plainTextRepubblicaIt)
+			soupMoto1pro = BeautifulSoup(plainTextMoto1pro)
 
 
 			url_limpias = []
@@ -98,6 +111,38 @@ class Command(BaseCommand):
                                         	if each.string:
                                                 	url_limpias.append(href)
                                                 	titulos_limpios.append(each.string)
+
+			for div in soupMotociclismoEs.findAll('div', {'class': 'noticia'}, limit=10):
+				for each in div.findAll('h2'):
+					for each in div.findAll('a'):
+						href = "http://www.motociclismo.es" + each.get('href')
+						if each.string:
+							url_limpias.append(href)
+							titulos_limpios.append(each.string)
+
+			for div in soupMotoblogIt.findAll('div', {'class': 'item-list-post'}, limit=10):
+				for each in div.findAll('h2'):
+					for each in div.findAll('a'):
+						href = each.get('href')
+						if each.string:
+							url_limpias.append(href)
+							titulos_limpios.append(each.string)
+
+			for article in soupRepubblicaIt.findAll('article', limit=10):
+				for each in article.findAll('h1'):
+					for each in article.findAll('a'):
+						href = each.get('href')
+						if each.string:
+							url_limpias.append(href)
+							titulos_limpios.append(each.string)
+
+			for div in soupMoto1pro.findAll('div', {'class': 'titulo-01-interiores'}, limit=10):
+				for each in div.findAll('h2'):
+					for each in div.findAll('a'):
+						href = "http://www.moto1pro.com/" + each.get('href')
+						if each.string:
+							url_limpias.append(href)
+							titulos_limpios.append(each.string)
 
 
 			#print (url_limpias)
