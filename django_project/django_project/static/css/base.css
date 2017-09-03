@@ -128,9 +128,10 @@ footer{
 	margin-left: -4em;
 }
 @media only screen and (max-width: 720px){
-	footer{
+	/*footer{
 		height: 80px;
 	}
+	*/
 	.lista_noticias{
 		width: 100%;
 	}
