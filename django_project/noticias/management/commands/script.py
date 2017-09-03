@@ -52,7 +52,7 @@ class Command(BaseCommand):
 
 			for div in soup.findAll('div', {'class': 'pntc-txt'}, limit=10):
 				for each in div.findAll('a'):      #get all elements with 'a' tag
-					href = "http:" + each.get('href')
+					href = each.get('href')
 					#print (href)          #print href
 					#print (each.string)   #print the text in tags
 					#print (each)          #print whole tag
