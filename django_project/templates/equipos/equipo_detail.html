@@ -4,10 +4,13 @@
 	{{ equipo.nombre }}
 {% endblock %}
 {% block content%}
+	<div class="container">
+                <a class="material_design_arrow" href="/equipos">Atrás</a>
+        </div>
 	<div class="detail_info">
 		<h1>{{ equipo.nombre }}</h1>
-		<p>{{ equipo.imagen_equipo }}</p>
-		<p>{{ equipo.fuente  }}</p>
+		<p><img class="perfil_piloto" src="{{ equipo.imagen_equipo.url }}"></p>
+		<p class="fuente_archivos_media">Fuente: {{ equipo.fuente  }}</p>
 		{% if equipo.pilotos %}
 			<p>Pilotos del equipo:</p>
 			<ul>

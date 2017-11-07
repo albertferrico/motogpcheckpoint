@@ -4,6 +4,9 @@
 	{{ circuito.nombre }}
 {% endblock %}
 {% block content%}
+	<div class="container">
+                <a class="material_design_arrow" href="/circuitos">Atrás</a>
+        </div>
 	<div class="detail_info">
 		<h1>{{ circuito.nombre }}</h1>
 		{{ circuito.descripcion|safe }}

@@ -25,9 +25,9 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="{% static 'img/ms-icon-144x144.png' %}">
 	<meta name="theme-color" content="#ffffff">
-	<script src="{% static "js/base.js" %}" type="text/javascript"></script>
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script src="{% static "js/jquery-3.2.1.min.js" %}" type="text/javascript"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="{% static "js/base.js" %}" type="text/javascript"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -58,6 +58,7 @@
 		{% block content %}
 
 		{% endblock %}
+	<a href="#" class="scrollToTop">&#8679;</a>
 	</section>
 	<footer>
 		<p class="col-sm-12 col-md-6 text-center"><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> {% now "Y" %} MotoGPCheckpoint</p>

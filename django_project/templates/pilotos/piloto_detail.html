@@ -4,13 +4,16 @@
 	{{ piloto.nombre }}
 {% endblock %}
 {% block content%}
+	<div class="container">
+		<a class="material_design_arrow" href="/pilotos">Atrás</a>
+	</div>
 	<div class="detail_info">
 		{% if piloto.perfil_piloto  %}
 			<p><img class="perfil_piloto" src={{ piloto.perfil_piloto.url }}></p>
-			<p>Fuente: {{ piloto.fuente  }}</p>
+			<p class="fuente_archivos_media">Fuente: {{ piloto.fuente  }}</p>
 		{% endif %}	
 		<h1>{{ piloto.nombre }} | {{ piloto.numero_dorsal }}</h1>
-		<h2>{{ piloto.equipo  }}</h2>
+		<h2><a href="/equipos/{{ piloto.equipo.slug}}">{{ piloto.equipo  }}</a></h2>
 		{{ piloto.biografia|safe }}
 	</div>
 		
