@@ -9,7 +9,7 @@
 			{% for noticia in object_list %}
 				<li>
 					<a class="col-xs-12 col-sm-10" href=" {{ noticia.url_noticia }} " target="_blank">
-						{{ noticia.titulo|safe }}
+						{{ noticia.titulo|safe|truncatechars:100 }}
 					</a>
 					<a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ noticia.url_noticia  }}" data-via="MotoGPCheckP" data-dnt="true">Tweet</a> 
 					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>

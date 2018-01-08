@@ -18,33 +18,42 @@ class Command(BaseCommand):
 			srcCodeEurosport = requests.get("http://www.eurosport.es/motociclismo/")
 			srcCodeMotorsport = requests.get("http://es.motorsport.com/category/moto-gp/news/")
 			srcCodeMCN = requests.get("http://www.motorcyclenews.com/sport/motogp/")
-			srcCodeMSMagazine = requests.get("http://www.motorsportmagazine.com/motogp")
 			srcCodeMotociclismoEs = requests.get("http://www.motociclismo.es/mundial-motogp")
 			srcCodeMotoblogIt = requests.get("http://www.motoblog.it/categoria/motogp-motomondiale")
 			srcCodeRepubblicaIt = requests.get("http://www.repubblica.it/sport/moto-gp/")
 			srcCodeMoto1pro = requests.get("http://www.moto1pro.com/tags/motogp")
-			
+			srcCodeCrashNet = requests.get("http://www.crash.net/motogp/news_archive/1/content")
+			srcCodeGpOne = requests.get("https://www.gpone.com/en/category/motogp")
+			srcCodeSportEs = requests.get("http://www.sport.es/es/moto-gp/")
+			srcCodeGazzettaIt = requests.get("http://www.gazzetta.it/Moto/moto-GP/")
+
 			plainText = srcCode.text
 			plainTextMarca = srcCodeMarca.text
 			plainTextEurosport = srcCodeEurosport.text
 			plainTextMotorsport = srcCodeMotorsport.text
 			plainTextMCN = srcCodeMCN.text
-			plainTextMSMagazine = srcCodeMSMagazine.text
 			plainTextMotociclismoEs = srcCodeMotociclismoEs.text
 			plainTextMotoblogIt = srcCodeMotoblogIt.text
 			plainTextRepubblicaIt = srcCodeRepubblicaIt.text
 			plainTextMoto1pro = srcCodeMoto1pro.text
+			plainTextCrashNet = srcCodeCrashNet.text
+			plainTextGpOne = srcCodeGpOne.text
+			plainTextSportEs = srcCodeSportEs.text
+			plainTextGazzettaIt = srcCodeGazzettaIt.text
 
 			soup = BeautifulSoup(plainText)
 			soupMarca = BeautifulSoup(plainTextMarca)
 			soupEurosport = BeautifulSoup(plainTextEurosport)
 			soupMotorsport = BeautifulSoup(plainTextMotorsport)
 			soupMCN = BeautifulSoup(plainTextMCN)
-			soupMSMagazine = BeautifulSoup(plainTextMSMagazine)
 			soupMotociclismoEs = BeautifulSoup(plainTextMotociclismoEs)
 			soupMotoblogIt = BeautifulSoup(plainTextMotoblogIt)
 			soupRepubblicaIt = BeautifulSoup(plainTextRepubblicaIt)
 			soupMoto1pro = BeautifulSoup(plainTextMoto1pro)
+			soupCrashNet = BeautifulSoup(plainTextCrashNet)
+			soupGpOne = BeautifulSoup(plainTextGpOne)
+			soupSportEs = BeautifulSoup(plainTextSportEs)
+			soupGazzettaIt = BeautifulSoup(plainTextGazzettaIt)
 
 
 			url_limpias = []
@@ -58,7 +67,7 @@ class Command(BaseCommand):
 					#print (each)          #print whole tag
 					if each.string:
 						url_limpias.append(href)
-						titulos_limpios.append(each.string)
+						titulos_limpios.append("ESP - " + each.string)
 
 			for h3 in soupMarca.findAll('h3', {'class': 'mod-title'}, limit=10):
 				for each in h3.findAll('a'):      #get all elements with 'a' tag
@@ -68,7 +77,7 @@ class Command(BaseCommand):
 					#print (each)          #print whole tag
 					if each.string:
 						url_limpias.append(href)
-						titulos_limpios.append(each.string)
+						titulos_limpios.append("ESP - " + each.string)
 
 			for div in soupEurosport.findAll('div', {'class': 'storylist-container__main-title'}, limit=10):
 				for each in div.findAll('a'):      #get all elements with 'a' tag
@@ -78,7 +87,7 @@ class Command(BaseCommand):
 					#print (each)          #print whole tag
 					if each.string:
 						url_limpias.append(href)
-						titulos_limpios.append(each.string)
+						titulos_limpios.append("ESP - " + each.string)
 
                         for div in soupMotorsport.findAll('div', {'class': 'article'}, limit=10):
                                 for each in div.findAll('h3'):
@@ -89,7 +98,7 @@ class Command(BaseCommand):
                                                 #print (each)          #print whole tag
 						if each.string:
                                                 	url_limpias.append(href)
-                                                	titulos_limpios.append(each.string)
+                                                	titulos_limpios.append("ESP - " + each.string)
 
 			for h3 in soupMCN.findAll('h3', {'class': 'title'}, limit=10):
 				for each in h3.findAll('a'):
@@ -99,18 +108,7 @@ class Command(BaseCommand):
 					# print (each)
 					if each.string:
 						url_limpias.append(href)
-						titulos_limpios.append(each.string)
-
-			for div in soupMSMagazine.findAll('div', {'class': 'teaser'}, limit=10):
-				for each in div.findAll('div', {'class': 'content_container'}):
-                                	for each in div.findAll('a'):      #get all elements with 'a' tag
-                                        	href = "http://www.motorsportmagazine.com/motogp" + each.get('href')
-                                        	#print (href)          #print href
-                                        	#print (each.string)   #print the text in tags
-                                        	#print (each)          #print whole tag
-                                        	if each.string:
-                                                	url_limpias.append(href)
-                                                	titulos_limpios.append(each.string)
+						titulos_limpios.append("ENG - " + each.string)
 
 			for div in soupMotociclismoEs.findAll('div', {'class': 'noticia'}, limit=10):
 				for each in div.findAll('h2'):
@@ -118,7 +116,7 @@ class Command(BaseCommand):
 						href = "http://www.motociclismo.es" + each.get('href')
 						if each.string:
 							url_limpias.append(href)
-							titulos_limpios.append(each.string)
+							titulos_limpios.append("ESP - " + each.string)
 
 			for div in soupMotoblogIt.findAll('div', {'class': 'item-list-post'}, limit=10):
 				for each in div.findAll('h2'):
@@ -126,7 +124,7 @@ class Command(BaseCommand):
 						href = each.get('href')
 						if each.string:
 							url_limpias.append(href)
-							titulos_limpios.append(each.string)
+							titulos_limpios.append("IT - " + each.string)
 
 			for article in soupRepubblicaIt.findAll('article', limit=10):
 				for each in article.findAll('h1'):
@@ -134,15 +132,36 @@ class Command(BaseCommand):
 						href = each.get('href')
 						if each.string:
 							url_limpias.append(href)
-							titulos_limpios.append(each.string)
+							titulos_limpios.append("IT - " + each.string)
 
 			for div in soupMoto1pro.findAll('div', {'class': 'titulo-01-interiores'}, limit=10):
 				for each in div.findAll('h2'):
 					for each in div.findAll('a'):
-						href = "http://www.moto1pro.com/" + each.get('href')
+						href = "http://www.moto1pro.com" + each.get('href')
 						if each.string:
 							url_limpias.append(href)
-							titulos_limpios.append(each.string)
+							titulos_limpios.append("ESP - " + each.string)
+			
+			for div in soupCrashNet.findAll('div', {'class': 'views-field-title'}, limit=10):
+				for each in div.findAll('a'):
+					href = "http://www.crash.net" + each.get('href')
+					if each.string:
+						url_limpias.append(href)
+						titulos_limpios.append("ENG - " + each.string)
+
+			for h1 in soupGpOne.findAll('h1', {'class': 'title'}, limit=10):
+				for each in h1.findAll('a'):
+					href = "https://www.gpone.com" + each.get('href')
+					if each.string:
+						url_limpias.append(href)
+						titulos_limpios.append("ENG - " + each.string)
+
+			for h2 in soupSportEs.findAll('h2', {'class': 'title'}, limit=10):
+				for each in h2.findAll('a'):
+					href = each.get('href')
+					if each.string:
+						url_limpias.append(href)
+						titulos_limpios.append("ESP - " + each.string)
 
 
 			#print (url_limpias)

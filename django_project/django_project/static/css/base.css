@@ -100,8 +100,9 @@ footer{
 }
 #pagination_noticias{
 	display: table;
-	/*margin: 0 auto !important;
-	max-width: 800px !important;*/
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
 }
 #pagination_noticias li a {
 	margin: 0.5em 0;

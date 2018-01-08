@@ -5,7 +5,7 @@
 {% endblock %}
 {% block content%}
 	<div class="container">
-                <a class="material_design_arrow" href="/equipos">Atrás</a>
+                <a class="material_design_arrow" href="/equipos">&lt; Equipos</a>
         </div>
 	<div class="detail_info">
 		<h1>{{ equipo.nombre }}</h1>
@@ -14,7 +14,9 @@
 		{% if equipo.pilotos %}
 			<p>Pilotos del equipo:</p>
 			<ul>
-				<li><a href="http://motogpcheckpoint.com/pilotos/{{ piloto.slug }}">{{ equipo.pilotos }}</a></li>
+			{% for piloto in object_list %}
+				<li><a href="/pilotos/{{ piloto.slug }}">{{ piloto.nombre }}</a></li>
+			{% endfor %}
 			</ul>
 		{% endif %}
 		{{ equipo.historia|safe }}

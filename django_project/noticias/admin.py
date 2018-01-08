@@ -3,4 +3,4 @@ from .models import Noticia
 
 @admin.register(Noticia)
 class AdminNoticia(admin.ModelAdmin):
-	list_display = ('fecha_noticia','titulo','url_noticia',)
+	list_display = ('timestamp','titulo','url_noticia',)
