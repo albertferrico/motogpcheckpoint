@@ -17,7 +17,7 @@ class Command(BaseCommand):
 			srcCodeMarca = requests.get("http://www.marca.com/motor/motogp.html")
 			srcCodeEurosport = requests.get("http://www.eurosport.es/motociclismo/")
 			srcCodeMotorsport = requests.get("http://es.motorsport.com/category/moto-gp/news/")
-			srcCodeMCN = requests.get("http://www.motorcyclenews.com/sport/motogp/")
+			#srcCodeMCN = requests.get("https://www.motorcyclenews.com/sport/motogp/")
 			srcCodeMotociclismoEs = requests.get("http://www.motociclismo.es/mundial-motogp")
 			srcCodeMotoblogIt = requests.get("http://www.motoblog.it/categoria/motogp-motomondiale")
 			srcCodeRepubblicaIt = requests.get("http://www.repubblica.it/sport/moto-gp/")
@@ -31,7 +31,7 @@ class Command(BaseCommand):
 			plainTextMarca = srcCodeMarca.text
 			plainTextEurosport = srcCodeEurosport.text
 			plainTextMotorsport = srcCodeMotorsport.text
-			plainTextMCN = srcCodeMCN.text
+			#plainTextMCN = srcCodeMCN.text
 			plainTextMotociclismoEs = srcCodeMotociclismoEs.text
 			plainTextMotoblogIt = srcCodeMotoblogIt.text
 			plainTextRepubblicaIt = srcCodeRepubblicaIt.text
@@ -45,7 +45,7 @@ class Command(BaseCommand):
 			soupMarca = BeautifulSoup(plainTextMarca)
 			soupEurosport = BeautifulSoup(plainTextEurosport)
 			soupMotorsport = BeautifulSoup(plainTextMotorsport)
-			soupMCN = BeautifulSoup(plainTextMCN)
+			#soupMCN = BeautifulSoup(plainTextMCN)
 			soupMotociclismoEs = BeautifulSoup(plainTextMotociclismoEs)
 			soupMotoblogIt = BeautifulSoup(plainTextMotoblogIt)
 			soupRepubblicaIt = BeautifulSoup(plainTextRepubblicaIt)
@@ -100,15 +100,15 @@ class Command(BaseCommand):
                                                 	url_limpias.append(href)
                                                 	titulos_limpios.append("ESP - " + each.string)
 
-			for h3 in soupMCN.findAll('h3', {'class': 'title'}, limit=10):
-				for each in h3.findAll('a'):
-					href = "http://www.motorcyclenews.com" + each.get('href')
+			#for h3 in soupMCN.findAll('h3', {'class': 'title'}, limit=10):
+				#for each in h3.findAll('a'):
+					#href = "http://www.motorcyclenews.com" + each.get('href')
 					# print (href)
 					# print (each.string)
 					# print (each)
-					if each.string:
-						url_limpias.append(href)
-						titulos_limpios.append("ENG - " + each.string)
+					#if each.string:
+						#url_limpias.append(href)
+						#titulos_limpios.append("ENG - " + each.string)
 
 			for div in soupMotociclismoEs.findAll('div', {'class': 'noticia'}, limit=10):
 				for each in div.findAll('h2'):
