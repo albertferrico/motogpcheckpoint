@@ -6,9 +6,10 @@
 	{% block content%}
 		<ul class="lista_items_principal">
 			{% for equipo in object_list %}
-				<li>
+				<li class="col-xs-12 col-sm-6 col-md-4">
+					<img src="{{ equipo.imagen_equipo.url }}">
 					<a href="{% url "equipos:detalle" equipo.slug %}">
-						{{ equipo.nombre }} | 
+						{{ equipo.nombre }}
 					</a>
 				</li>
 			{% endfor %}
