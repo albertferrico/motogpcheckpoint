@@ -14,6 +14,12 @@ footer{
 	bottom: 0;
 	left: 0;
 	float: left;
+	position:fixed;
+}
+.contenedor-carta{
+	background-color:#ffffff;
+	max-width:300px;
+	margin: 0 auto;
 }
 .detail_info{
 	background-color: #ffffff;
@@ -38,6 +44,17 @@ footer{
 }
 .fuente_archivos_media{
 	font-size:10px;
+}
+.formulario_idioma_noticia{
+	width:83%;
+}
+.formulario_idioma_noticia p{
+	display:inline;
+	color: #ffffff;
+}
+.formulario_idioma_noticia select{
+	border: 3px solid #000000;
+	height: 3em;
 }
 .full_height{
 	height: 100%;
@@ -75,6 +92,11 @@ footer{
 .logo_personalizado, .boton_personalizado{
 	color: #ffffff !important;
 }
+.main_content_wrapper{
+	float: left;
+	width: 100%;
+	margin: 0 auto;
+}
 .material_design_arrow{
 	background-color: #000000;
 	padding: 10px;
@@ -90,7 +112,7 @@ footer{
 	text-decoration: none;
 }
 .margin_bottom_for_footer{
-	margin-bottom: 7%;
+	margin-bottom: 7% !important;
 }
 .mostrar{
 	display: block;
@@ -128,7 +150,7 @@ footer{
     	color: #FFFFFF;
     	text-decoration: none;
     	position:fixed;
-    	bottom:30px;
+    	bottom:10%;
     	right:40px;
     	display:none;
     	border-radius:30px;
@@ -167,31 +189,28 @@ footer{
 	margin-left: -4em;
 }
 @media only screen and (max-width: 720px){
-	/*footer{
-		height: 80px;
-	}
-	*/
 	.lista_noticias{
 		width: 100%;
 	}
 	.margin_bottom_for_footer{
-		margin-bottom: 15%;
+		margin-bottom: 25% !important;
 	}
 	.scrollToTop{
-		width:100%;
-            	height:50px;
-            	padding:15px;
-            	text-align:center;
-            	background-color: #000000;
-            	font-weight: bold;
-            	color: #FFFFFF;
-            	text-decoration: none;
-            	position:fixed;
-            	bottom:0;
-	   	right:0;
-            	display:none;
-	    	border-radius:0;
-    	}
+		width:50px;
+        	height:50px;
+        	padding:15px;
+        	text-align:center;
+        	background-color: #000000;
+        	font-weight: bold;
+        	color: #FFFFFF;
+        	text-decoration: none;
+        	position:fixed;
+        	bottom:14%;
+        	right:40px;
+        	display:none;
+        	border-radius:30px;
+        	text-decoration:none;
+	}
 	.scrollToTop:hover{
 	    	background-color: #FFFFFF;
 		color: #000000;

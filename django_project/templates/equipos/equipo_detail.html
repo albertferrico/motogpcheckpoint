@@ -9,7 +9,7 @@
         </div>
 	<div class="detail_info">
 		<h1>{{ equipo.nombre }}</h1>
-		<p><img class="perfil_piloto" src="{{ equipo.imagen_equipo.url }}"></p>
+		<p><img class="perfil_piloto" alt="{{equipo.nombre}}" src="{{ equipo.imagen_equipo.url }}"></p>
 		<p class="fuente_archivos_media">Fuente: {{ equipo.fuente  }}</p>
 		{% if equipo.pilotos %}
 			<p>Pilotos del equipo:</p>

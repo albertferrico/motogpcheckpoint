@@ -6,6 +6,20 @@
 	{% block content%}
 		<h1 class="lista_items_principal titular_pagina_listado">Listado de noticias sobre todo lo que ocurre en MotoGP</h1>
 		<ul class="lista_items_principal">
+			<div class="formulario_idioma_noticia">
+				<form method="GET">
+						<p>Idioma de noticias</p>
+                        			<select name="idioma">
+							<option selected>Elige uno de la lista</option>
+                                			<option value="ESP">Español</option>
+                               				<option value="IT">Italiano</option>
+                                			<option value="ENG">Inglés</option>
+							<option value="PT">Portugués</option>
+							<option value="FR">Francés</option>
+                        			</select>
+    						<button class="btn btn-outline-secondary" type="submit">Filtrar</button>
+                		</form>
+			</div>
 			{% for noticia in object_list %}
 				<li>
 					<a class="col-xs-12 col-sm-10" href=" {{ noticia.url_noticia }} " target="_blank">
@@ -16,37 +30,28 @@
 					</div>
 				</li>
 			{% endfor %}
-		</ul>
 		{% if is_paginated %}
-  			<ul id="pagination_noticias" class="pagination">
-    				{% if page_obj.has_previous %}
-      					<li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
-    				{% else %}
-      					<li class="disabled"><span>&laquo;</span></li>
-    				{% endif %}
-    				{% for i in paginator.page_range %}
-      					{% if page_obj.number == i %}
-        					<li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
-      					{% else %}
-        					<li><a href="?page={{ i }}">{{ i }}</a></li>
-      					{% endif %}
-    				{% endfor %}
-    				{% if page_obj.has_next %}
-      					<li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
-    				{% else %}
-      					<li class="disabled"><span>&raquo;</span></li>
-    				{% endif %}
-  			</ul>
-		{% endif %}
-		<script>
-  			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  			ga('create', 'UA-92617282-1', 'auto');
-  			ga('send', 'pageview');
-
-		</script>
+                        <ul id="pagination_noticias" class="pagination">
+                                {% if page_obj.has_previous %}
+                                        <li><a href="?page={{ page_obj.previous_page_number }}&idioma={{ request.GET.idioma }}">&laquo;</a></li>
+                                {% else %}
+                                        <li class="disabled"><span>&laquo;</span></li>
+                                {% endif %}
+                                {% for i in paginator.page_range %}
+                                        {% if page_obj.number == i %}
+                                                <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                                        {% else %}
+                                                <li><a href="?page={{ i }}&idioma={{ request.GET.idioma }}">{{ i }}</a></li>
+                                        {% endif %}
+                                {% endfor %}
+                                {% if page_obj.has_next %}
+                                        <li><a href="?page={{ page_obj.next_page_number }}&idioma={{ request.GET.idioma }}">&raquo;</a></li>
+                                {% else %}
+                                        <li class="disabled"><span>&raquo;</span></li>
+                                {% endif %}
+                        </ul>
+                {% endif %}
+		</ul>
 	{% endblock %}	
 </body>
 </html>

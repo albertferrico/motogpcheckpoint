@@ -21,7 +21,7 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
 	<link rel="manifest" href="/manifest.json">
 	<meta name="description" content="Website donde podrás leer de un vistazo los últimas noticias sobre MotoGP de los principales periódicos y medios de comunicación">
-	<meta name="keywords" content="noticia,deporte,motor,MotoGP,motos,motociclismo,campeonato">
+	<meta name="keywords" content="noticia,notizia,nouvelles,news,pilotos,pilotes,circuitos,deporte,motor,MotoGP,motos,motociclismo,mundial,championship,motomondiale,campeonato,Ducati,Honda,Yamaha,Aprilia,KTM,Suzuki,Andrea Dovizioso,Johann Zarco,Danilo Petrucci,Xavier Simeon,Thomas Luthi,Karel Abraham,Alvaro Bautista,Franco Morbidelli,Maverick Viñales,Dani Pedrosa,Andrea Iannone, Takaaki Nakagami,Cal Crutchlow,Bradley Smith,Aleix Espargaro,Alex Rins,Jack Miller,Pol Espargaro,Scott Redding,Valentino Rossi,Tito Rabat,Hafizh Syahrin,Marc Marquez,Jorge Lorenzo">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="{% static 'img/ms-icon-144x144.png' %}">
 	<meta name="theme-color" content="#ffffff">
@@ -43,11 +43,20 @@ window.cookieconsent.initialise({
     }
   },
   "content": {
-    "message": "Este sitio web usa cookies para asegurarnos de que obtengas la mejor experiencia en nuestro sitio web",
+    "message": "Este sitio web usa cookies para asegurarnos de que obtengas la mejor experiencia en nuestro sitio web. Al navegar estás aceptando nuestra política de cookies.",
     "dismiss": "Entendido",
-    "link": "Saber más"
+    "link": " ",
   }
 })});
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92617282-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92617282-1');
 </script>
 </head>
 <body>
@@ -67,23 +76,23 @@ window.cookieconsent.initialise({
           <ul class="nav navbar-nav">
             <li><a href="/circuitos">Circuitos</a></li>
             <li><a href="/equipos">Equipos</a></li>
-			<li><a href="/noticias">Noticias</a></li>
-			<li><a href="/pilotos">Pilotos</a></li>
+	    <li><a href="/noticias">Noticias</a></li>
+	    <li><a href="/pilotos">Pilotos</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 	</header>
-	<section class="margin_bottom_for_footer">
+	<section class="margin_bottom_for_footer main_content_wrapper">
 		{% block content %}
 
 		{% endblock %}
 	<a href="#" class="scrollToTop">&#8679;</a>
 	</section>
 	<footer>
-		<p class="col-sm-12 col-md-6 text-center"><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> {% now "Y" %} MotoGPCheckpoint</p>
-		<p class="col-sm-12 col-md-6 text-center visible-xs">Contacto:<a href="mailto:motogpcheckpointoficialweb@gmail.com">motogpcheckpointoficialweb@gmail.com</a></p>
-
+		<div class="container">
+			<p class="col-sm-12 col-md-6"><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> {% now "Y" %} MotoGPCheckpoint</p>
+			<p class="col-sm-12 col-md-6">Contacto:<a href="mailto:motogpcheckpointoficialweb@gmail.com">motogpcheckpointoficialweb@gmail.com</a></p>
 	</footer>
 </body>
 </html>

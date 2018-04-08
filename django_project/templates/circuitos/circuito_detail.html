@@ -10,7 +10,7 @@
 	<div class="detail_info">
 		<h1>{{ circuito.nombre }}</h1>
 		{{ circuito.descripcion|safe }}
-		<img src="{{ circuito.imagen_trazado.url }}" alt="">
+		<img class="{{ circuito.nombre }}" src="{{ circuito.imagen_trazado.url }}" alt="">
 	</div>
 		
 {% endblock %}

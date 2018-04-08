@@ -9,7 +9,7 @@
 	</div>
 	<div class="detail_info">
 		{% if piloto.perfil_piloto  %}
-			<p><img class="perfil_piloto" src={{ piloto.perfil_piloto.url }}></p>
+			<p><img class="perfil_piloto" alt="{{piloto.nombre}}" src={{ piloto.perfil_piloto.url }}></p>
 			<p class="fuente_archivos_media">Fuente: {{ piloto.fuente  }}</p>
 		{% endif %}	
 		<h1>{{ piloto.nombre }} | {{ piloto.numero_dorsal }}</h1>

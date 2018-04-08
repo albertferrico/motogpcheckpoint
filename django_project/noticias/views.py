@@ -14,8 +14,14 @@ from .models import Noticia
 class NoticiaLista(ListView):
 	model = Noticia
 	paginate_by = 20
-	queryset = Noticia.objects.all()  # Default: Model.objects.all()
-	
+	#queryset = Noticia.objects.all()  # Default: Model.objects.all()
+
+	def get_queryset(self):
+		queryset = Noticia.objects.all()
+		if self.request.GET.get("idioma"):
+			selection = self.request.GET.get("idioma")
+			queryset = Noticia.objects.filter(idioma = selection)
+		return queryset	
 
 class NoticiaNueva(LoginRequiredMixin, CreateView):
 	model = Noticia
