@@ -1,0 +1,24 @@
+{% extends "base_en.html" %}
+
+{% block page_title %}
+	Riders from the MotoGP championship
+{% endblock %}
+        {% block content%}
+                <ul class="lista_items_principal">
+                        {% for rider in object_list %}
+                                <li class="col-xs-12 col-sm-6 col-md-4">
+                                        <div class="contenedor-carta" data-url="{% url "riders:detail" rider.slug %}">
+                                                {% if rider.rider_profile %}
+							<img src={{ rider.rider_profile.url }}>
+						{% endif %}
+                                                <a href="{% url "riders:detail" rider.slug %}">
+                                                        {{ rider.name }} | {{ rider.rider_number }}
+                                                </a>
+                                        </div>
+                                </li>
+                        {% endfor %}
+                </ul>
+        {% endblock %}
+
+</body>
+</html>

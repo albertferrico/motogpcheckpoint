@@ -9,13 +9,15 @@
         </div>
 	<div class="detail_info">
 		<h1>{{ equipo.nombre }}</h1>
+		<p class="lang_icon_first"><a href="/equipos/{{ equipo.slug }}"><img src="/media/es_flag.jpg"></a></p>
+                <p class="lang_icon_second"><a href="/teams/{{ equipo.slug }}"><img src="/media/uk_flag.jpg"></a></p>
 		<p><img class="perfil_piloto" alt="{{equipo.nombre}}" src="{{ equipo.imagen_equipo.url }}"></p>
 		<p class="fuente_archivos_media">Fuente: {{ equipo.fuente  }}</p>
-		{% if equipo.pilotos %}
-			<p>Pilotos del equipo:</p>
-			<ul>
-			{% for piloto in object_list %}
-				<li><a href="/pilotos/{{ piloto.slug }}">{{ piloto.nombre }}</a></li>
+		{% if equipo.pilotos_del_equipo %}
+			<h2>Pilotos del equipo:</h2>
+			<ul class="pilotos_de_equipo">
+			{% for piloto in equipo.pilotos_del_equipo.all %}
+				<li><h4><a href="/pilotos/{{ piloto.slug }}">{{ piloto.nombre }}</a></h4></li>
 			{% endfor %}
 			</ul>
 		{% endif %}

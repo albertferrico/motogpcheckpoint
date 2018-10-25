@@ -44,6 +44,10 @@ INSTALLED_APPS = (
     'pilotos',
     'portada',
     'django_crontab',
+    'riders',
+    'teams',
+    'racetracks',
+    'news',
 )
 
 CRONJOBS = [

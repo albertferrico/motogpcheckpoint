@@ -1,0 +1,24 @@
+{% extends "base_en.html" %}
+
+{% block page_title %}
+        {{ rider.name }}
+{% endblock %}
+{% block content%}
+        <div class="container">
+                <a class="material_design_arrow" href="/riders">&lt; Riders</a>
+        </div>
+        <div class="detail_info">
+		<p class="lang_icon_first"><a href="/pilotos/{{ rider.slug }}"><img src="/media/es_flag.jpg"></a></p>
+		<p class="lang_icon_second"><a href="/riders/{{ rider.slug }}"><img src="/media/uk_flag.jpg"></a></p>
+                {% if rider.rider_profile  %}
+                        <p><img class="perfil_piloto" alt="{{ rider.name }}" src={{ rider.rider_profile.url }}></p>
+                        <p class="fuente_archivos_media">Source: {{ rider.source  }}</p>
+                {% endif %}
+                <h1>{{ rider.name }} | {{ rider.rider_number }}</h1>
+                <h4><a href="/teams/{{ rider.team.slug}}">{{ rider.team }}</a></h4>
+                {{ rider.biography|safe }}
+        </div>
+
+{% endblock %}
+</body>
+</html>

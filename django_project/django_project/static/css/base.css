@@ -1,6 +1,9 @@
+*{
+	font-family: 'Open Sans', sans-serif;
+}
 body{
 	margin: 0;
-	background-image: url("../img/fondo.png");
+	background-color: #ffffff;
 	padding-bottom: 50px;
 }
 html, body{
@@ -16,10 +19,39 @@ footer{
 	float: left;
 	position:fixed;
 }
+header{
+	height: 120px;
+    	text-align: center;
+    	background-color: #000000;
+    	color: #ffffff;
+    	border-style: none;
+    	font-size: 30px;
+    	padding-top: 30px;
+}
+p{
+	font-size: 16px;
+}
+.fb_iframe_widget{
+	display: block !important;
+}
+.cabecera-link{
+	color: #ffffff;
+	text-decoration: none;
+}
+.cabecera-link:hover{
+	color: #510909;
+	text-decoration: underline;
+}
 .contenedor-carta{
-	background-color:#ffffff;
-	max-width:300px;
-	margin: 0 auto;
+        background-color:#ffffff;
+        max-width:300px;
+        margin: 0 auto;
+}
+.contenedor-carta img{
+	width: 100%;
+}
+.contenedor-carta:hover a{
+	background-color: #1a4d75;
 }
 .detail_info{
 	background-color: #ffffff;
@@ -28,9 +60,16 @@ footer{
 	margin: 1em auto;
 	padding: 3em;
 	border-radius: 10px;
+	border: 5px solid #23527c;
+}
+.detail_info a{
+	color: #1a4d75;
+}
+.detail_info a:hover{
+	color: #510909;
 }
 .detail_info h1{
-	padding-bottom: 1em;
+	/*padding-bottom: 1em;*/
 }
 .detail_info img{
 	width: 100%;
@@ -48,9 +87,17 @@ footer{
 .formulario_idioma_noticia{
 	width:83%;
 }
+.formulario_idioma_noticia button{
+	background: #510909;
+	color: #ffffff;
+}
+.formulario_idioma_noticia button:hover{
+	background: #1a4d75;
+	color: #ffffff;
+}
 .formulario_idioma_noticia p{
 	display:inline;
-	color: #ffffff;
+	color: #000000;
 }
 .formulario_idioma_noticia select{
 	border: 3px solid #000000;
@@ -58,6 +105,19 @@ footer{
 }
 .full_height{
 	height: 100%;
+}
+.lang_icon_first {
+	position: absolute;
+	top: 0;
+	right: 55px;
+}
+.lang_icon_second {
+        position: absolute;
+        top: 0;
+        right: 0;
+}
+.lang_icon_first img, .lang_icon_second img {
+	padding: 0;
 }
 .lista_items_principal{
 	list-style-type: none;
@@ -75,15 +135,16 @@ footer{
 }
 .lista_items_principal li a{
 	color: #ffffff;
-	background-color: #b7b7b7;
+	background-color: #c37c0e;
 	text-decoration: none;
 	display: block;
 	padding: 1em;
+	margin-bottom: 1em;
 	
 }
 .lista_items_principal li a:hover{
-	color: #000000;
-	background-color: #ffffff;
+	color: #ffffff;
+	background-color: #1a4d75;
 }
 .lista_noticias {
 	display: inline-block !important;
@@ -98,24 +159,62 @@ footer{
 	margin: 0 auto;
 }
 .material_design_arrow{
-	background-color: #000000;
+	background-color: #c37c03;
 	padding: 10px;
 	border-radius: 10px;
-	color: #9d9d9d;
+	color: #ffffff;
 	font-weight: bold;
 	font-size: 14px;
 	text-decoration: none;
+	display: block;
+	float: left;
 }
 .material_design_arrow:hover{
-	background-color: #FFFFFF;
-	color: #000000;
+	background-color: #1a4d75;
+	color: #ffffff;
 	text-decoration: none;
 }
 .margin_bottom_for_footer{
 	margin-bottom: 7% !important;
 }
+ul.menu_listado_principal{
+	max-width:800px;
+	margin: 0 auto !important;
+	float: none !important;
+}
+.menu_listado_principal li{
+	width:25%;
+}
 .mostrar{
 	display: block;
+}
+.navbar{
+	background-color: #ffffff;
+}
+
+.navbar_escritorio{
+	/*font-family:  Avantgarde;*/
+	font-variant: small-caps;
+	width: 100%;
+	margin: 0px 20px 0px 20px;
+	word-spacing: 90px;
+	/*padding:  40px;*/
+	text-align:  center;
+	font-weight:  700;
+	background-color:#ffffff;
+}
+.navbar_escritorio a{
+	color: #540911;
+	line-height: 3em !important;
+	border-style: solid;
+        border-left-style:  none;
+        border-right-style:  none;
+        border-width: 6px;
+        border-color: black;
+}
+.navbar-toggle{
+	background-color: #ffffff !important;
+	border: 1px solid #000000 !important;
 }
 .ocultar{
 	display: none;
@@ -135,6 +234,10 @@ footer{
 .perfil_piloto{
 	max-width: 200px;
 }
+.pilotos_de_equipo{
+	list-style: none;
+	padding: 0;
+}
 footer{
 	background-color: #000000;
 	color: #ffffff;
@@ -145,7 +248,7 @@ footer{
     	height:50px;
     	padding:15px; 
     	text-align:center; 
-    	background-color: #000000;
+    	background-color: #c37c03;
     	font-weight: bold;
     	color: #FFFFFF;
     	text-decoration: none;
@@ -158,8 +261,8 @@ footer{
 }
 .scrollToTop:hover{
     	text-decoration:none;
-	background-color: #FFFFFF;
-	color: #000000;
+	background-color: #23527c;
+	color: #ffffff;
 }
 
 .site-menu-container ul{
@@ -182,10 +285,10 @@ footer{
 
 }
 .titular_pagina_listado{
-	color: #ffffff;
+	color: #510909;
 }
 .twitter-share-button-rendered {
-	margin-top: 1em;
+/*	margin-top: 1.1em;*/
 	margin-left: -4em;
 }
 @media only screen and (max-width: 720px){
@@ -195,12 +298,15 @@ footer{
 	.margin_bottom_for_footer{
 		margin-bottom: 25% !important;
 	}
+	.menu_listado_principal li{
+        	width:100%;
+	}
 	.scrollToTop{
 		width:50px;
         	height:50px;
         	padding:15px;
         	text-align:center;
-        	background-color: #000000;
+        	background-color: #c37c03;
         	font-weight: bold;
         	color: #FFFFFF;
         	text-decoration: none;
@@ -212,7 +318,7 @@ footer{
         	text-decoration:none;
 	}
 	.scrollToTop:hover{
-	    	background-color: #FFFFFF;
-		color: #000000;
+	    	background-color: #23527c;
+		color: #ffffff;
 	}
 }

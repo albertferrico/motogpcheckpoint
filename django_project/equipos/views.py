@@ -19,12 +19,12 @@ class EquipoDetalle(DetailView):
 class EquipoNuevo(LoginRequiredMixin, CreateView):
 	model = Equipo
 	success_url = reverse_lazy('equiposlista')
-	fields = ['nombre','pilotos','historia','imagen_equipo','fuente']
+	fields = ['nombre','pilotos','historia','imagen_equipo','fuente','pilotos_del_equipo']
 
 class EquipoActualizado(LoginRequiredMixin, UpdateView):
 	model = Equipo
 	success_url= reverse_lazy('equipos:lista')
-	fields = ['nombre','pilotos','historia','imagen_equipo','fuente']
+	fields = ['nombre','pilotos','historia','imagen_equipo','fuente','pilotos_del_equipo']
 
 class EquipoEliminar(LoginRequiredMixin, DeleteView):
 	model = Equipo

@@ -4,6 +4,7 @@
 	{% load staticfiles %}
 	<meta charset="utf-8">
 	<title>{% block page_title %}{% endblock %}</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link rel="stylesheet" href="{% static 'css/base.css' %}">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="apple-touch-icon" sizes="57x57" href="{% static 'img/apple-icon-57x57.png' %}">
@@ -31,6 +32,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
 <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
 <script>
 window.addEventListener("load", function(){
 window.cookieconsent.initialise({
@@ -61,28 +78,25 @@ window.cookieconsent.initialise({
 </head>
 <body>
 	<header class="top-bar-site">
-		<nav class="navbar navbar-inverse navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">MotoGPCheckPoint</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/circuitos">Circuitos</a></li>
-            <li><a href="/equipos">Equipos</a></li>
-	    <li><a href="/noticias">Noticias</a></li>
-	    <li><a href="/pilotos">Pilotos</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+		<a class="cabecera-link" href="/">motogpcheckpoint.com</a>
 	</header>
+	<nav class="navbar navbar-static-top">
+		<div class="container">
+        		<div class="navbar-header">
+          			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          				<small>Menú</small>
+				</button>
+        		</div>
+        		<div id="navbar" class="navbar-collapse collapse navbar_escritorio">
+          			<ul class="nav navbar-nav menu_listado_principal">
+            				<li><a href="/circuitos">Circuitos</a></li>
+            				<li><a href="/equipos">Equipos</a></li>
+            				<li><a href="/noticias">Noticias</a></li>
+            				<li><a href="/pilotos">Pilotos</a></li>
+          			</ul>
+        		</div><!--/.nav-collapse -->
+      		</div>
+    	</nav>
 	<section class="margin_bottom_for_footer main_content_wrapper">
 		{% block content %}
 

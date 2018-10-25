@@ -5,6 +5,8 @@
 {% endblock %}
 	{% block content%}
 		<ul class="lista_items_principal">
+			<p class="lang_icon_first"><a href="/circuitos/"><img src="/media/es_flag.jpg"></a></p>
+                	<p class="lang_icon_second"><a href="/racetracks/"><img src="/media/uk_flag.jpg"></a></p>
 			{% for circuito in object_list %}
 				{% if circuito.carrera_por_disputar %}
 					<li>
