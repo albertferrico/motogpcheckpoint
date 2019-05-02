@@ -9,6 +9,7 @@ class Equipo(models.Model):
 	imagen_equipo = models.ImageField(blank=True)
 	fuente = models.CharField(max_length=255, blank=True)
 	historia = models.TextField()
+	estado = models.CharField(max_length=255, blank=True)
 	slug = models.CharField(max_length=255, default='equipo', editable=True)
 
 

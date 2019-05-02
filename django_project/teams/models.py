@@ -10,6 +10,7 @@ class Team(models.Model):
         team_image = models.ImageField(blank=True)
         source = models.CharField(max_length=255, blank=True)
         history = models.TextField()
+	status = models.CharField(max_length=255, blank=True)
         slug = models.CharField(max_length=255, default='team', editable=True)
 
 

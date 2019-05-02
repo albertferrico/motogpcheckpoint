@@ -75,6 +75,11 @@ p{
 	width: 100%;
 	padding-top: 3em;
 }
+.esconder_texto_largo {
+	white-space: nowrap;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+}
 .evento_en_curso{
 	color: #68f442;
 }

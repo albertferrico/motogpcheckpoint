@@ -12,6 +12,7 @@ class Rider(models.Model):
         rider_profile = models.ImageField(blank=True)
         source = models.CharField(max_length=255, blank=True)
         rider_number = models.IntegerField(default=0)
+	competition_status = models.CharField(max_length=255, blank=True)
         slug = models.CharField(max_length=255, default='rider', editable=True)
 
         class Meta:

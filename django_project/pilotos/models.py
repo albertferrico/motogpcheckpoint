@@ -9,6 +9,7 @@ class Piloto(models.Model):
 	perfil_piloto = models.ImageField(blank=True)
 	fuente = models.CharField(max_length=255, blank=True)
 	numero_dorsal = models.IntegerField(default=0)
+	estado_competicion = models.CharField(max_length=255, blank=True)
 	slug = models.CharField(max_length=255, default='piloto', editable=True)
 
 	class Meta:

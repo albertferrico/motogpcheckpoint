@@ -8,16 +8,18 @@
 			<p class="lang_icon_first"><a href="/equipos/"><img src="/media/es_flag.jpg"></a></p>
                 	<p class="lang_icon_second"><a href="/teams/"><img src="/media/uk_flag.jpg"></a></p>
                         {% for team in object_list %}
-                                <li class="col-xs-12 col-sm-6 col-md-4">
-                                        <div class="contenedor-carta" data-url="{% url "teams:detail" team.slug %}">
-                                                {% if team.team_image %}
-							<img src="{{ team.team_image.url }}">
-						{% endif %}
-                                                <a href="{% url "teams:detail" team.slug %}">
-                                                        {{ team.name }}
-                                                </a>
-                                        </div>
-                                </li>
+				{% if team.status == "Active" %}
+                                	<li class="col-xs-12 col-sm-6 col-md-4">
+                                        	<div class="contenedor-carta" data-url="{% url "teams:detail" team.slug %}">
+                                                	{% if team.team_image %}
+								<img src="{{ team.team_image.url }}">
+							{% endif %}
+                                                	<a class="esconder_texto_largo" href="{% url "teams:detail" team.slug %}">
+                                                        	{{ team.name }}
+                                                	</a>
+                                        	</div>
+                                	</li>
+				{% endif %}
                         {% endfor %}
                 </ul>
         {% endblock %}

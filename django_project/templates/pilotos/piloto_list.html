@@ -8,14 +8,16 @@
 		<p class="lang_icon_first"><a href="/pilotos/"><img src="/media/es_flag.jpg"></a></p>
                 <p class="lang_icon_second"><a href="/riders/"><img src="/media/uk_flag.jpg"></a></p>
 			{% for piloto in object_list %}
-				<li class="col-xs-12 col-sm-6 col-md-4">
-					<div class="contenedor-carta" data-url="{% url "pilotos:detalle" piloto.slug %}">
-						<img src={{ piloto.perfil_piloto.url }}>
-						<a href="{% url "pilotos:detalle" piloto.slug %}">
-							{{ piloto.nombre }} | {{ piloto.numero_dorsal }}
-						</a>
-					</div>
-				</li>
+				{% if piloto.estado_competicion == "Activo" %}
+					<li class="col-xs-12 col-sm-6 col-md-4">
+						<div class="contenedor-carta" data-url="{% url "pilotos:detalle" piloto.slug %}">
+							<img src={{ piloto.perfil_piloto.url }}>
+							<a href="{% url "pilotos:detalle" piloto.slug %}">
+								{{ piloto.nombre }} | {{ piloto.numero_dorsal }}
+							</a>
+						</div>
+					</li>
+				{% endif %}
 			{% endfor %}
 		</ul>
 	{% endblock %}

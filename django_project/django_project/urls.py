@@ -2,6 +2,7 @@ from django.conf.urls import include, url
 from django.http import HttpResponseRedirect
 from django.contrib import admin
 from portada import views
+from django.views.generic import TemplateView
 admin.autodiscover()
 
 urlpatterns = [
@@ -20,4 +21,10 @@ urlpatterns = [
     url(r'^pilotos/', include('pilotos.urls', namespace='pilotos')),
     url(r'^riders/', include('riders.urls', namespace='riders')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^sobre_nosotros/', 
+    TemplateView.as_view(template_name="pag_estaticas/sobre_nosotros.html"),
+    name='sobre_nostros'),
+    url(r'^terminos_condiciones/',
+    TemplateView.as_view(template_name="pag_estaticas/term_and_cond.html"),
+    name='terminos_condiciones'),
 ]
