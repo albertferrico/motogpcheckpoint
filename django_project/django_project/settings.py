@@ -122,6 +122,3 @@ MEDIA_ROOT = '/home/django/django_project/django_project/media'
 
 MEDIA_URL = '/media/'
 
-# this is an example
-
-
